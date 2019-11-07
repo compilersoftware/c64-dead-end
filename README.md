@@ -46,10 +46,12 @@ Sólo se reflejan los más relevantes.
 * En Spectrum se usa la construcción `PRINT AT y,x` para situar el cursor en las coordenadas (x,y). El origen de coordenadas es el punto (0,0) que está en la esquina superior izquierda. En Commodore 64 hay que llamar a una rutina del sistema: `POKE 781,y: POKE 782,x: SYS 65520`.
 * Commodore 64 carece de la palabra clave `INVERSE`. Se entra y sale del modo de caracteres invertidos usando caracteres de control: `CHR$(18)` para entrar y `CHR$(146)` para salir.
 * Commodore 64 carece de la palabra clave `BRIGHT`, para modificar el brillo del color empleado. Por el contrario disponemos de 16 colores diferentes.
+* Commodore 64 carece de la palabra clave `CLS`. En su lugar se puede usar el carácter de control `CHR$(147)`.
 * En Spectrum, `GO TO` y `GO SUB` se escriben separado. Sus correspondientes en Commodore son `GOTO` y `GOSUB`.
 * En Commodore 64, la palabra clave `RESTORE` no admite parámetros.
 * En Commodore 64 no existe la palabra clave `INKEY$`. Usamos `GET` para leer la entrada de teclado.
 * En Commodore 64 no existe la palabra clave `BEEP`. Para emitir un ruido similar al de Spectrum, hemos usado las sentencias `POKE 54296,15:POKE 54296,0`.
+* En Commodore 64, la construcción `IF ... THEN` no admite cláusula `ELSE`, así que hay que hay que adaptar el código para sortear esa carencia; básicamente ejecutar siempre la parte _else_ y luego el _if_ ... _then_.
 * El BASIC de Commodore 64 permite que escribamos el código sin espacios entre las palabras clave, los operandos y los símbolos. No obstante, se han mantenido por legibilidad.
 * Los nombres de las variables pueden ser tan largos como se quiera, pero solo se consideran los dos primeros caracteres.
 
